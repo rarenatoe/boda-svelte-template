@@ -7,13 +7,20 @@
 	--color-bg-0: rgb(202, 216, 228);
 	--color-bg-1: hsl(209, 36%, 86%);
 	--color-bg-2: hsl(224, 44%, 95%);
-	--color-theme-1: #ff3e00;
-	--color-theme-2: #4075a6;
+	--color-theme-1: #ff6633;
+	--color-theme-2: #33CCFF;
 	--color-text: rgba(0, 0, 0, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 	font-family: var(--font-body);
 	color: var(--color-text);
+
+	--toastContainerTop: auto;
+	--toastContainerRight: auto;
+	--toastContainerBottom: 8rem;
+	--toastContainerLeft: calc(50vw - 8rem);
+	--toastBorderRadius: 8px;
+	--toastMinHeight: 0;
 }
 
 @font-face {
@@ -27,14 +34,10 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-attachment: fixed;
-	background-color: var(--color-bg-1);
 	background-size: 100vw 100vh;
-	background-image: radial-gradient(
-			50% 50% at 50% 50%,
-			rgba(255, 255, 255, 0.75) 0%,
-			rgba(255, 255, 255, 0) 100%
-		),
-		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+	background: #0096C6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #FFFFFF, #6DD5FA, #0096C6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #FFFFFF, #6DD5FA, #0096C6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 h1,
@@ -63,10 +66,6 @@ h1 {
 
 h2 {
 	font-size: 1rem;
-}
-
-h5 {
-	font-size: 0.6rem;
 }
 
 pre {
@@ -99,12 +98,6 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
-@media (min-width: 720px) {
-	h1 {
-		font-size: 4rem;
-	}
-}
-
 .visually-hidden {
 	border: 0;
 	clip: rect(0 0 0 0);
@@ -115,4 +108,23 @@ button:focus:not(:focus-visible) {
 	position: absolute;
 	width: 1px;
 	white-space: nowrap;
+}
+
+.button {
+	background-color: var(--color-theme-1);
+	color: var(--color-text);
+	padding: 8px;
+	border-radius: 8px;
+	display: flex;
+	align-items: flex-end;
+	text-decoration: none;
+}
+
+.button:hover {
+	filter: brightness(125%);
+	text-decoration: none;
+}
+
+.toast {
+	border-radius: 8px;
 }

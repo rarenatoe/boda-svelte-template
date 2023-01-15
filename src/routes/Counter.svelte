@@ -60,6 +60,7 @@
 	.header {
 		display: flex;
 		flex-direction: row;
+		align-items: flex-end;
 	}
 	.number-list {
 		display: flex;

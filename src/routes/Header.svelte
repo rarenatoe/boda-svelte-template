@@ -3,33 +3,26 @@
 </script>
 
 <header>
-	<div class="corner">
-		🐈
-		<a href="mailto:rivadeneyradenisse@gmail.com"> rivadeneyradenisse@gmail.com</a>
-	</div>
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">Sobre Nosotros</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</nav>
-
-	<div class="corner">
-		🐇
-		<a href="mailto:rare.na.toe@gmail.com">rare.na.toe@gmail.com</a>
+	<div id="nav-container">
+		<nav>
+			<svg viewBox="0 0 2 3" aria-hidden="true">
+				<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+			</svg>
+			<ul>
+				<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+					<a href="/">Home</a>
+				</li>
+				<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+					<a href="/about">Nosotros</a>
+				</li>
+				<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
+					<a href="/sverdle">Sverdle</a>
+				</li>
+			</ul>
+			<svg viewBox="0 0 2 3" aria-hidden="true">
+				<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
+			</svg>
+		</nav>
 	</div>
 </header>
 
@@ -39,18 +32,10 @@
 		justify-content: space-between;
 	}
 
-	.corner {
+	#nav-container {
 		display: flex;
-		flex-direction: column;
+		flex: 1;
 		justify-content: center;
-		align-items: center;
-	}
-
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin: 0 16px;
 	}
 
 	nav {
@@ -115,11 +100,5 @@
 
 	a:hover {
 		color: var(--color-theme-1);
-	}
-
-	@media (max-width: 720px) {
-		.corner a {
-			display: none;
-		}
 	}
 </style>
