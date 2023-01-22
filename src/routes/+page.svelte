@@ -27,5 +27,9 @@
 
 	.title {
 		font-family: AdlerySwash;
+		color: #d95b71;
+		/* text-shadow: inset 0 0 7px 4px #ecacb7; */
+		text-shadow: 4px 4px 4px #ecacb7;
+		opacity: 1;
 	}
 </style>

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import copy from 'clipboard-copy';
 	import copyIcon from '$lib/images/copy.svg';
-	import catEmail from '$lib/images/catemail.png';
 	import { toast } from '@zerodevx/svelte-toast';
 
 	import './styles.css';
