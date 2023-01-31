@@ -1,20 +1,17 @@
 <script lang="ts">
 	import renyden from '$lib/images/renyden.jpg';
+	type File = { default: string };
+	const boardGamesImports = import.meta.glob<{ default: string }>('$lib/images/boardgames/*');
 
-	// const boardGames = [
-	// 	'$lib/images/grand-austria-hotel.png',
-	// 	'$lib/images/hanabi.png',
-	// 	'$lib/images/power-grid.png',
-	// 	'$lib/images/race-for-the-galaxy.png',
-	// 	'$lib/images/takenoko.webp',
-	// 	'$lib/images/netrunner.png',
-	// 	'$lib/images/century.png',
-	// 	'$lib/images/concordia.png'
-	// ];
-
-	const boardGamesPromisesObj = import.meta.glob('$lib/images/boardgames/*');
-	// const iterableImages = Object.entries(boardGamesGlob);
-	const boardGames = Object.keys(boardGamesPromisesObj);
+	const boardGamesPromises = Promise.all(
+		Object.entries(boardGamesImports).map(async ([path, resolver]) => {
+			const { default: imageUrl } = await resolver();
+			return {
+				imageUrl,
+				filename: path.split('/').at(-1) ?? ''
+			};
+		})
+	);
 </script>
 
 <svelte:head>
@@ -25,11 +22,13 @@
 <p>Hola, somos Renato y Denisse</p>
 <img id="dreni" src={renyden} alt="Renato y Denisse" />
 
-<p>nos gusta los juegos de mesa, como por ejemplo...</p>
+<p>nos gusta los juegos de mesa, por ejemplo...</p>
 <div class="gallery-wrap wrap-effect">
-	{#each boardGames as game}
-		<div class="item" style={`background-image: url('${game}');`} />
-	{/each}
+	{#await boardGamesPromises then boardgames}
+		{#each boardgames as game}
+			<div class="item" style={`background-image: url('${game.imageUrl}');`} />
+		{/each}
+	{/await}
 </div>
 
 <style>
@@ -58,7 +57,12 @@
 
 	.item:hover {
 		flex: 8;
-		background-position: top;
+	}
+
+	@media (min-width: 720px) {
+		.item {
+			flex: 4;
+		}
 	}
 
 	/* Image Accordions Effect 2 */
