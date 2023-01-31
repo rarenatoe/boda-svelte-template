@@ -1,17 +1,6 @@
 <script lang="ts">
 	import renyden from '$lib/images/renyden.jpg';
-	type File = { default: string };
-	const boardGamesImports = import.meta.glob<{ default: string }>('$lib/images/boardgames/*');
-
-	const boardGamesPromises = Promise.all(
-		Object.entries(boardGamesImports).map(async ([path, resolver]) => {
-			const { default: imageUrl } = await resolver();
-			return {
-				imageUrl,
-				filename: path.split('/').at(-1) ?? ''
-			};
-		})
-	);
+	import * as boardgames from '$lib/images/boardgames';
 </script>
 
 <svelte:head>
@@ -24,11 +13,9 @@
 
 <p>nos gusta los juegos de mesa, por ejemplo...</p>
 <div class="gallery-wrap wrap-effect">
-	{#await boardGamesPromises then boardgames}
-		{#each boardgames as game}
-			<div class="item" style={`background-image: url('${game.imageUrl}');`} />
-		{/each}
-	{/await}
+	{#each Object.values(boardgames) as game}
+		<div class="item" style={`background-image: url('${game}');`} />
+	{/each}
 </div>
 
 <style>
