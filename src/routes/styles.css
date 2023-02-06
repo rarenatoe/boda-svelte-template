@@ -30,6 +30,15 @@
     src: url('/fonts/Adlery-Swash-trial.ttf'); /* IE9 Compat Modes */
 }
 
+
+@font-face {
+    font-family: 'LibreBaskerville-Regular';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/LibreBaskerville-Regular.ttf'); /* IE9 Compat Modes */
+}
+
+
 body {
 	min-height: 100vh;
 	margin: 0;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import renyden from '$lib/images/renyden.jpg';
+	import renyden from '$lib/images/PORTADA.jpeg';
 	import * as boardgames from '$lib/images/boardgames';
 </script>
 

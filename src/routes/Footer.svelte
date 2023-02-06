@@ -16,7 +16,9 @@
 	<div id="accounts" class="block">
 		<CodeForCopying title="BCP Cta. Soles" code="193-75133224-0-44" />
 		<CodeForCopying title="Scotiabank Cta. Soles" code="150-0278740" />
-		<CodeForCopying title="Código de Novios Falabella" code="683167-02" />
+		<CodeForCopying title="Código de Novios Falabella" code="683167-02">
+			<br><a href="https://www.noviosfalabella.com.pe/">noviosfalabella.com</a>
+		</CodeForCopying>
 	</div>
 	<div class="block">
 		<h2>¿tienes preguntas?</h2>
@@ -46,6 +48,7 @@
 		#accounts {
 			display: flex;
 			flex-direction: row;
+			align-items: flex-start;
 		}
 	}
 

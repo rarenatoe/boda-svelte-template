@@ -20,7 +20,9 @@
 	<button class="copy-code" on:click={onClick}>
 		<code>{code}</code> <img src={copyIcon} alt="copy" />
 	</button>
+	<slot/>
 </div>
+
 
 <style>
 	.item {
