@@ -40,13 +40,27 @@
 
 
 body {
-	min-height: 100vh;
+
+	background-image: url(/src/lib/images/beige-paper.png);
+	box-sizing: border-box;
+	color: rgb(122,122,122);
+	display: block;
+	margin: 0;
+	opacity: 1;
+	overflow-x: hidden;
+	padding: 0px;
+	position: relative;
+	text-size-adjust: 100%;
+	vertical-align: baseline;
+	width: 1102px;
+
+	/* min-height: 100vh;
 	margin: 0;
 	background-attachment: fixed;
 	background-size: 100vw 100vh;
-	/* background: #FFF5FC; */
+	
 	background: #FEE6EA;
-	background-image: url('/src/lib/images/beige-paper.png');
+	background-image: url('/src/lib/images/beige-paper.png'); */
 }
 
 h1,
