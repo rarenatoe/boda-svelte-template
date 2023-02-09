@@ -1,6 +1,7 @@
 <script>
 	import Counter from './Counter.svelte';
 	import CloudySVG from '$lib/images/cloudy.svg';
+	import portada from '$lib/images/portada.jpeg';
 </script>
 
 <svelte:head>
@@ -8,7 +9,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section id="portada">
+<section id="portada" style={`background-image: url('${portada}');`}>
 	<div id="content">
 		<h3>Nos casaremos</h3>
 		<h1 id="title">Denisse & Renato</h1>
