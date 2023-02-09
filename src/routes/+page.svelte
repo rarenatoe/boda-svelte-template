@@ -57,8 +57,7 @@
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-		height: 100vh;
-		width: 100%;
+		transition: background-image 0.5s ease;
 	}
 
 	#content {
