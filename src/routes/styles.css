@@ -72,6 +72,8 @@ h1 {
 
 h2 {
 	font-size: 1rem;
+	margin: 0;
+	text-align: center;
 }
 
 pre {
@@ -122,8 +124,16 @@ button:focus:not(:focus-visible) {
 	padding: 8px;
 	border-radius: 8px;
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	text-decoration: none;
+
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	border: 1px solid;
+	font-size: 0.75rem;
+	letter-spacing: 4px;
+	padding: 16px 32px;
+	text-transform: uppercase;
+	margin-top: 1rem;
 }
 
 .button:hover {

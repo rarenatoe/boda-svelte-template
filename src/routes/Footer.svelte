@@ -6,6 +6,7 @@
 
 	import './styles.css';
 	import CodeForCopying from './CodeForCopying.svelte';
+	import FooterCell from './FooterCell.svelte';
 
 	const codeOnClick = (code: string) => () => {
 		copy(code);
@@ -14,19 +15,19 @@
 </script>
 
 <footer>
-	<div id="accounts" class="block">
+	<div id="accounts">
 		<CodeForCopying title="BCP Cta. Soles" code="193-75133224-0-44" />
 		<CodeForCopying title="Scotiabank Cta. Soles" code="150-0278740" />
 		<CodeForCopying title="Código de Novios Falabella" code="683167-02">
-			<br /><a href="https://www.noviosfalabella.com.pe/">noviosfalabella.com</a>
+			<a href="https://www.noviosfalabella.com.pe/">noviosfalabella.com</a>
 		</CodeForCopying>
 	</div>
-	<div class="block">
+	<FooterCell>
 		<h2>¿tienes preguntas?</h2>
 		<a class="button" href="mailto:rivadeneyradenisse@gmail.com,rare.na.toe@gmail.com">
 			Envianos un email <img id="cat" height="20" src={catEmail} alt="cat email" />
 		</a>
-	</div>
+	</FooterCell>
 </footer>
 
 <style>
@@ -34,22 +35,22 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
-		padding: 16px;
+		padding: 2rem;
 	}
 
-	.block {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+	a {
+		text-align: center;
 	}
 
 	@media (min-width: 720px) {
 		#accounts {
 			display: flex;
 			flex-direction: row;
-			align-items: flex-start;
+			justify-content: center;
+		}
+
+		#accounts :global(.item):not(:first-child) {
+			border-left: 1px solid;
 		}
 	}
 
