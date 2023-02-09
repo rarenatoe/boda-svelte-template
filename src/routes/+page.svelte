@@ -5,8 +5,11 @@
 </script>
 
 <svelte:head>
-	<title>Reni & Deni: Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Boda de Renato y Denisse</title>
+	<meta
+		name="Boda DReni"
+		content="App con datos sobre el evento que se llevara a cabo el 18 de marzo"
+	/>
 </svelte:head>
 
 <section id="portada" style={`background-image: url('${portada}');`}>
