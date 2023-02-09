@@ -55,7 +55,9 @@
 	.counter {
 		display: flex;
 		flex-direction: column;
-		margin: 1rem 0;
+		color: rgb(243, 243, 243);
+		font-weight: 400;
+		text-shadow: 4px 4px 4px #b2a9aa;
 	}
 	.header {
 		display: flex;
@@ -66,8 +68,8 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		border-top: 1px solid rgba(0, 0, 0, 0.1);
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		border-top: 1px solid rgb(243, 243, 243);
+		border-bottom: 1px solid rgb(243, 243, 243);
 	}
 	.number {
 		font-size: 64px;

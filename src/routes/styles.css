@@ -42,11 +42,8 @@
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-attachment: fixed;
 	background-size: 100vw 100vh;
-	/* background: #FFF5FC; */
 	background: #FEE6EA;
-	background-image: url('/src/lib/images/beige-paper.png');
 }
 
 h1,
