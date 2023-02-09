@@ -49,7 +49,7 @@
 
 	#portada {
 		padding: 0;
-		background-image: url('/src/lib/images/portada.jpeg');
+		background-image: url('../lib/images/portada.jpeg');
 		background-size: cover;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
