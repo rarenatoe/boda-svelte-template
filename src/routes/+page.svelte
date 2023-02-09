@@ -50,10 +50,15 @@
 
 	#portada {
 		padding: 0;
-		background-size: cover;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		background-position: center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		height: 100vh;
+		width: 100%;
 	}
 
 	#content {
