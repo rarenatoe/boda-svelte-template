@@ -102,7 +102,7 @@
 		padding: 16px 32px;
 		text-transform: uppercase;
 		text-shadow: 4px 4px 4px #b2a9aa;
-		margin: 1rem;
+		margin: 2rem;
 	}
 
 	#address {

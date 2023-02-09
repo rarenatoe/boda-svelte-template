@@ -122,7 +122,6 @@ button:focus:not(:focus-visible) {
 	background-color: var(--color-theme-1);
 	color: var(--color-text);
 	padding: 8px;
-	border-radius: 8px;
 	display: flex;
 	align-items: center;
 	text-decoration: none;
