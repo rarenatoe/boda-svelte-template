@@ -1,7 +1,7 @@
 <script>
 	import Counter from './Counter.svelte';
 	import CloudySVG from '$lib/images/cloudy.svg';
-	import portada from '$lib/images/portada.jpeg';
+	import portada from '$lib/images/portada.jpg';
 </script>
 
 <svelte:head>
@@ -50,7 +50,6 @@
 
 	#portada {
 		padding: 0;
-		background-image: url('../lib/images/portada.jpeg');
 		background-size: cover;
 		background-attachment: fixed;
 		background-repeat: no-repeat;

@@ -1,7 +1,8 @@
 <script lang="ts">
-	import copy from 'clipboard-copy';
-	import catEmail from '$lib/images/catemail.png';
 	import { toast } from '@zerodevx/svelte-toast';
+	import copy from 'clipboard-copy';
+
+	import catEmail from '$lib/images/catemail.png';
 
 	import './styles.css';
 	import CodeForCopying from './CodeForCopying.svelte';
@@ -17,7 +18,7 @@
 		<CodeForCopying title="BCP Cta. Soles" code="193-75133224-0-44" />
 		<CodeForCopying title="Scotiabank Cta. Soles" code="150-0278740" />
 		<CodeForCopying title="Código de Novios Falabella" code="683167-02">
-			<br><a href="https://www.noviosfalabella.com.pe/">noviosfalabella.com</a>
+			<br /><a href="https://www.noviosfalabella.com.pe/">noviosfalabella.com</a>
 		</CodeForCopying>
 	</div>
 	<div class="block">
