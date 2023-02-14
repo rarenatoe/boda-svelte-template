@@ -3,6 +3,8 @@
 	import CloudySVG from '$lib/images/cloudy.svg';
 	import portada from '$lib/images/portada.jpg';
 	import locacionIcon from '$lib/images/locacion.svg';
+	import nosotrosIcon from '$lib/images/nosotros.svg';
+	import regalosIcon from '$lib/images/regalos.svg';
 </script>
 
 <svelte:head>
@@ -23,12 +25,41 @@
 	</div>
 	<img src={CloudySVG} alt="nubes" width="100%" color="#FEE6EA" />
 </section>
-<div>
-	<div class="menu-item">
+<div id="menu">
+	<a class="menu-item" href="#nuestra-historia">
+		<img src={nosotrosIcon} alt="informacion del evento" width="64" height="64" />
+		Nuestra Historia
+	</a>
+	<a class="menu-item">
 		<img src={locacionIcon} alt="informacion del evento" width="64" height="64" />
 		Informacion del Evento
-	</div>
+	</a>
+	<a class="menu-item">
+		<img src={regalosIcon} alt="informacion del evento" width="64" height="64" />
+		Regalos
+	</a>
 </div>
+<section class="impar" id="nuestra-historia">
+	<h2>Nuestra Historia</h2>
+
+	<p>
+		Antes de conocerla, Renato la imaginaba, una musa en su mente que su corazón anhelaba, pero ella
+		también `lo soñó, el destino así lo quiso, y cuando se conocieron, supieron que ese era el
+		aviso.
+	</p>
+
+	<p>
+		Fue jugando juegos de mesa donde sus destinos se juntaron, en la casa de Renato, sus caminos se
+		encontraron, y desde ese día, cada aventura juntos es única, explorando nuevas cosas, su amor
+		crece sin réplica.
+	</p>
+
+	<p>
+		No hay futuro sin el otro, eso lo saben bien, su amor es su hogar, su refugio, su Edén, y juntos
+		seguirán adelante, sin importar el final, porque Renato y Denisse, son dos almas gemelas, unidas
+		en su amor real.
+	</p>
+</section>
 <section>
 	<iframe
 		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.708117068435!2d-76.96358568544079!3d-12.06359269145608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c76cb0a8c939%3A0x5bd665718c53dc46!2sCasa%20Salcedo%20Eventos!5e0!3m2!1sen!2spe!4v1676340544239!5m2!1sen!2spe"
@@ -58,17 +89,21 @@
 		padding: 3rem;
 	}
 
+	#menu {
+		display: flex;
+		flex-direction: row;
+		padding: 1rem;
+	}
+
 	.menu-item {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		flex-wrap: wrap;
-		color: red;
-	}
-
-	.menu-item img {
-		color: red;
+		color: var(--color-text);
+		padding: 1rem;
+		justify-content: flex-start;
+		text-align: center;
 	}
 
 	#portada {
@@ -90,14 +125,18 @@
 		align-items: center;
 	}
 
-	h1,
-	h3 {
+	.impar {
+		background-color: white;
+	}
+
+	#portada h1,
+	#portada h3 {
 		color: rgb(243, 243, 243);
 		font-weight: 400;
 		text-shadow: 4px 4px 4px #b2a9aa;
 	}
 
-	h3 {
+	#portada h3 {
 		font-family: Roboto;
 		letter-spacing: 3px;
 		text-align: center;
@@ -127,7 +166,6 @@
 
 	#address {
 		font-family: LibreBaskerville-Regular;
-		color: var(--color-theme-0);
 		text-shadow: 4px 4px 4px #ae889088;
 		padding: 1.2rem;
 		padding-bottom: 0px;
