@@ -2,6 +2,7 @@
 	import Counter from './Counter.svelte';
 	import CloudySVG from '$lib/images/cloudy.svg';
 	import portada from '$lib/images/portada.jpg';
+	import locacionIcon from '$lib/images/locacion.svg';
 </script>
 
 <svelte:head>
@@ -22,8 +23,22 @@
 	</div>
 	<img src={CloudySVG} alt="nubes" width="100%" color="#FEE6EA" />
 </section>
+<div>
+	<div class="menu-item">
+		<img src={locacionIcon} alt="informacion del evento" width="64" height="64" />
+		Informacion del Evento
+	</div>
+</div>
 <section>
-	<div class="square" />
+	<iframe
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.708117068435!2d-76.96358568544079!3d-12.06359269145608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c76cb0a8c939%3A0x5bd665718c53dc46!2sCasa%20Salcedo%20Eventos!5e0!3m2!1sen!2spe!4v1676340544239!5m2!1sen!2spe"
+		width="400"
+		height="250"
+		style="border:0;"
+		loading="lazy"
+		referrerpolicy="no-referrer-when-downgrade"
+		title="locacion"
+	/>
 </section>
 <section id="address">
 	Esperamos poder verte pronto.<br /><br />
@@ -43,12 +58,17 @@
 		padding: 3rem;
 	}
 
-	section .square {
+	.menu-item {
 		display: flex;
-		height: 100%;
-		width: 100%;
-		max-width: 300px;
-		margin: 2rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		color: red;
+	}
+
+	.menu-item img {
+		color: red;
 	}
 
 	#portada {
@@ -108,7 +128,6 @@
 	#address {
 		font-family: LibreBaskerville-Regular;
 		color: var(--color-theme-0);
-		/* text-shadow: inset 0 0 7px 4px #ecacb7; */
 		text-shadow: 4px 4px 4px #ae889088;
 		padding: 1.2rem;
 		padding-bottom: 0px;
