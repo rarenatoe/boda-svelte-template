@@ -4,9 +4,7 @@
 	import { toast } from '@zerodevx/svelte-toast';
 
 	import './styles.css';
-	import FooterCell from './FooterCell.svelte';
 
-	export let title: string;
 	export let code: string;
 
 	const onClick = () => {
@@ -16,13 +14,9 @@
 	};
 </script>
 
-<FooterCell>
-	<h2>{title}</h2>
-	<button class="copy-code" on:click={onClick}>
-		<code>{code}</code> <img src={copyIcon} alt="copy" />
-	</button>
-	<slot />
-</FooterCell>
+<button class="copy-code" on:click={onClick}>
+	<code>{code}</code> <img src={copyIcon} alt="copy" />
+</button>
 
 <style>
 	.copy-code {
@@ -36,7 +30,6 @@
 		overflow-x: auto;
 		color: var(--color-text);
 		border: none;
-		margin: 1rem;
 	}
 
 	.copy-code:hover {

@@ -1,10 +1,21 @@
 <script>
 	import Counter from './Counter.svelte';
+	import CodeForCopying from './CodeForCopying.svelte';
+
 	import CloudySVG from '$lib/images/cloudy.svg';
-	import portada from '$lib/images/portada.jpg';
-	import locacionIcon from '$lib/images/locacion.svg';
+	import infoIcon from '$lib/images/locacion.svg';
 	import nosotrosIcon from '$lib/images/nosotros.svg';
 	import regalosIcon from '$lib/images/regalos.svg';
+	import floresIcon from '$lib/images/flowers.svg';
+	import portada from '$lib/images/fotos/centro-escaleras.jpeg';
+	import photo1 from '$lib/images/fotos/barranco-oscuras.jpeg';
+	import photo2 from '$lib/images/fotos/barranco-pista.jpeg';
+	import photo3 from '$lib/images/fotos/centro-alameda-1.jpeg';
+	import photo4 from '$lib/images/fotos/centro-alameda-2.jpeg';
+	import photo5 from '$lib/images/fotos/centro-pista-1.jpeg';
+	import photo6 from '$lib/images/fotos/centro-pista-2.jpeg';
+	import photo7 from '$lib/images/fotos/puente-suspiros.jpeg';
+	import photo8 from '$lib/images/fotos/barranco-arbol.jpeg';
 </script>
 
 <svelte:head>
@@ -16,7 +27,7 @@
 </svelte:head>
 
 <section id="portada" style={`background-image: url('${portada}');`}>
-	<div id="content">
+	<div>
 		<h3>Nos casaremos</h3>
 		<h1 id="title">Denisse & Renato</h1>
 		<h3>18 de Marzo del 2023</h3>
@@ -30,22 +41,22 @@
 		<img src={nosotrosIcon} alt="informacion del evento" width="64" height="64" />
 		Nuestra Historia
 	</a>
-	<a class="menu-item">
-		<img src={locacionIcon} alt="informacion del evento" width="64" height="64" />
+	<a class="menu-item" href="#info-evento">
+		<img src={infoIcon} alt="informacion del evento" width="64" height="64" />
 		Informacion del Evento
 	</a>
-	<a class="menu-item">
+	<a class="menu-item" href="#regalos">
 		<img src={regalosIcon} alt="informacion del evento" width="64" height="64" />
 		Regalos
 	</a>
 </div>
 <section class="impar" id="nuestra-historia">
+	<img src={floresIcon} alt="Flores" width="96" height="96" />
 	<h2>Nuestra Historia</h2>
 
 	<p>
 		Antes de conocerla, Renato la imaginaba, una musa en su mente que su corazón anhelaba, pero ella
-		también `lo soñó, el destino así lo quiso, y cuando se conocieron, supieron que ese era el
-		aviso.
+		también lo soñó, el destino así lo quiso, y cuando se conocieron, supieron que ese era el aviso.
 	</p>
 
 	<p>
@@ -53,59 +64,84 @@
 		encontraron, y desde ese día, cada aventura juntos es única, explorando nuevas cosas, su amor
 		crece sin réplica.
 	</p>
+	<br />
 
+	<div id="photos-grid">
+		<img src={photo1} alt="Denisse y Renato en una calle oscura de Barranco" />
+		<img src={photo2} alt="Denisse y Renato bailando en la pista de Barranco" />
+		<img src={photo3} alt="Denisse y Renato caminando en el Centro de Lima" />
+		<img src={photo4} alt="Denisse y Renato mirandose en una alameda del Centro de Lima" />
+		<img src={photo5} alt="Denisse y Renato posando en pista del Centro de Lima" />
+		<img src={photo6} alt="Denisse y Renato obstruyendo el trafico del Centro de Lima" />
+		<img src={photo7} alt="Denisse y Renato en el Puente de los Suspiros" />
+		<img src={photo8} alt="Denisse y Renato en Barranco detras de un arbol" />
+	</div>
+</section>
+<section id="info-evento">
+	<img src={floresIcon} alt="Flores" width="96" height="96" />
+	<h2>Información del Evento</h2>
+
+	<div id="info-grid">
+		<div>
+			<h3>La Recepción</h3>
+			<p>
+				18 de Marzo del 2023<br />
+				07:00 PM - 08:00 PM<br />
+				Casa Salcedo<br />
+				Av. Separadora Industrial 2076<br />
+				La Molina
+			</p>
+		</div>
+		<div>
+			<h3>Estacionamiento</h3>
+			<p>
+				Se cuenta con cochera con espacio dispnible para autos.<br />
+				Contáctanos con tiempo para separarte un espacio.
+			</p>
+		</div>
+		<div>
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.708117068435!2d-76.96358568544079!3d-12.06359269145608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c76cb0a8c939%3A0x5bd665718c53dc46!2sCasa%20Salcedo%20Eventos!5e0!3m2!1sen!2spe!4v1676340544239!5m2!1sen!2spe"
+				style="border:0;"
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"
+				title="locacion"
+			/>
+		</div>
+	</div>
+</section>
+<section id="regalos">
+	<img src={regalosIcon} alt="informacion del evento" width="64" height="64" />
+	<h2>Regalos</h2>
 	<p>
-		No hay futuro sin el otro, eso lo saben bien, su amor es su hogar, su refugio, su Edén, y juntos
-		seguirán adelante, sin importar el final, porque Renato y Denisse, son dos almas gemelas, unidas
-		en su amor real.
+		Si deseas bendecirnos con un regalito, puedes dejarlo en cualquiera de las siguientes
+		direcciones:
 	</p>
-</section>
-<section>
-	<iframe
-		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.708117068435!2d-76.96358568544079!3d-12.06359269145608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c76cb0a8c939%3A0x5bd665718c53dc46!2sCasa%20Salcedo%20Eventos!5e0!3m2!1sen!2spe!4v1676340544239!5m2!1sen!2spe"
-		width="400"
-		height="250"
-		style="border:0;"
-		loading="lazy"
-		referrerpolicy="no-referrer-when-downgrade"
-		title="locacion"
-	/>
-</section>
-<section id="address">
-	Esperamos poder verte pronto.<br /><br />
-	Si deseas bendecirnos con un regalito, puedes dejarlo en cualquiera de las siguientes direcciones:
-	<br /> <br />
-	- Calle Arnaldo Márquez 853 - Jesús María. <br />
-	- Calle Bilbao 157 - Ate. <br /> <br /> <br />
-	O virtualmente:
+	<ul>
+		<li>Calle Arnaldo Márquez 853 - Jesús María.</li>
+		<li>Calle Bilbao 157 - Ate.</li>
+	</ul>
+	<p>O virtualmente:</p>
+	<div id="accounts">
+		<div>
+			<h3>BCP</h3>
+			Cta. Soles: <CodeForCopying code="193-75133224-0-44" /><br />
+			Yape: <CodeForCopying code="936-864-395" />
+		</div>
+		<div>
+			<h3>Scotiabank</h3>
+			Cta. Soles: <CodeForCopying code="150-0278740" /><br />
+			Plin: <CodeForCopying code="991-784-082" />
+		</div>
+		<div>
+			<h3>Novios Falabella</h3>
+			Codigo: <CodeForCopying code="683167-02" />
+			<a href="https://www.noviosfalabella.com.pe/">noviosfalabella.com</a>
+		</div>
+	</div>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 3rem;
-	}
-
-	#menu {
-		display: flex;
-		flex-direction: row;
-		padding: 1rem;
-	}
-
-	.menu-item {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		color: var(--color-text);
-		padding: 1rem;
-		justify-content: flex-start;
-		text-align: center;
-	}
-
 	#portada {
 		padding: 0;
 		background-attachment: fixed;
@@ -116,17 +152,6 @@
 		-o-background-size: cover;
 		background-size: cover;
 		transition: background-image 0.5s ease;
-	}
-
-	#content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.impar {
-		background-color: white;
 	}
 
 	#portada h1,
@@ -164,11 +189,105 @@
 		margin: 2rem;
 	}
 
-	#address {
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem;
+	}
+
+	p {
+		width: 100%;
+	}
+
+	section:nth-child(odd) {
+		background-color: white;
+	}
+
+	#menu {
+		display: flex;
+		flex-direction: row;
+		padding: 1rem;
+		justify-content: space-evenly;
+	}
+
+	.menu-item {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: var(--color-text);
+		padding: 1rem;
+		justify-content: flex-start;
+		text-align: center;
+	}
+
+	#portada div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#photos-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		row-gap: 2rem;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	#photos-grid img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		grid-column: span 2;
+	}
+
+	#info-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#info-grid div {
+		grid-column: span 2;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding-top: 2rem;
+	}
+
+	#regalos {
 		font-family: LibreBaskerville-Regular;
 		text-shadow: 4px 4px 4px #ae889088;
-		padding: 1.2rem;
-		padding-bottom: 0px;
-		font-size: 14px;
+	}
+
+	#accounts {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	#accounts div {
+		grid-column: span 3;
+		border-bottom: 1px solid black;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	@media (min-width: 720px) {
+		#accounts {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+
+		#accounts :global(.item):not(:first-child) {
+			border-left: 1px solid;
+		}
+	}
+
+	h3 {
+		text-align: center;
 	}
 </style>
