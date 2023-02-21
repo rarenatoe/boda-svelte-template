@@ -31,62 +31,44 @@
 </script>
 
 <div class="counter">
-	<div class="header">
-		<div class="cell"><h5>DÍAS</h5></div>
-		<div class="separator"><h1 class="hidden">:</h1></div>
-		<div class="cell"><h5>HORAS</h5></div>
-		<div class="separator"><h1 class="hidden">:</h1></div>
-		<div class="cell"><h5>MINUTOS</h5></div>
-		<div class="separator"><h1 class="hidden">:</h1></div>
-		<div class="cell"><h5>SEGUNDOS</h5></div>
-	</div>
-	<div class="number-list number">
-		<div class="cell"><h1>{days}</h1></div>
-		<div class="separator pad-vertical"><h1>:</h1></div>
-		<div class="cell"><h1>{hours}</h1></div>
-		<div class="separator"><h1>:</h1></div>
-		<div class="cell"><h1>{minutes}</h1></div>
-		<div class="separator pad-vertical"><h1>:</h1></div>
-		<div class="cell"><h1>{seconds}</h1></div>
-	</div>
+	<div class="header">DÍAS</div>
+	<div />
+	<div class="header">HORAS</div>
+	<div />
+	<div class="header">MINUTOS</div>
+	<div />
+	<div class="header">SEGUNDOS</div>
+	<div class="number">{days}</div>
+	<div class="number">:</div>
+	<div class="number">{hours}</div>
+	<div class="number">:</div>
+	<div class="number">{minutes}</div>
+	<div class="number">:</div>
+	<div class="number">{seconds}</div>
 </div>
 
 <style>
 	.counter {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		grid-template-rows: auto auto;
+		text-align: center;
 		color: rgb(243, 243, 243);
-		font-weight: 400;
 		text-shadow: 4px 4px 4px #b2a9aa;
+		margin: 2rem;
 	}
+
+	.counter div {
+		grid-column: span 1;
+		grid-column: span 1;
+		padding: 1rem 0;
+	}
+
 	.header {
-		display: flex;
-		flex-direction: row;
-		align-items: flex-end;
+		font-size: 0.8rem;
 	}
-	.number-list {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		border-top: 1px solid rgb(243, 243, 243);
-		border-bottom: 1px solid rgb(243, 243, 243);
-	}
+
 	.number {
-		font-size: 64px;
-	}
-	.cell {
-		display: flex;
-		flex: 1 1 0;
-		justify-content: center;
-		padding-left: 8px;
-		padding-right: 8px;
-	}
-	.separator {
-		display: flex;
-		justify-content: center;
-	}
-	.hidden {
-		visibility: hidden;
-		margin: 0;
+		font-size: 3rem;
 	}
 </style>
