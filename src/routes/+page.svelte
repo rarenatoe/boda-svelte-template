@@ -36,21 +36,23 @@
 	</div>
 	<img src={CloudySVG} alt="nubes" width="100%" color="#FEE6EA" />
 </section>
-<div id="menu">
-	<a class="menu-item" href="#nuestra-historia">
-		<img src={nosotrosIcon} alt="informacion del evento" width="64" height="64" />
-		Nuestra Historia
-	</a>
-	<a class="menu-item" href="#info-evento">
-		<img src={infoIcon} alt="informacion del evento" width="64" height="64" />
-		Información del Evento
-	</a>
-	<a class="menu-item" href="#regalos">
-		<img src={regalosIcon} alt="informacion del evento" width="64" height="64" />
-		Regalos
-	</a>
-</div>
-<section class="impar" id="nuestra-historia">
+<section>
+	<div id="menu">
+		<a class="menu-item" href="#nuestra-historia">
+			<img src={nosotrosIcon} alt="informacion del evento" width="64" height="64" />
+			Nuestra Historia
+		</a>
+		<a class="menu-item" href="#info-evento">
+			<img src={infoIcon} alt="informacion del evento" width="64" height="64" />
+			Informacion del Evento
+		</a>
+		<a class="menu-item" href="#regalos">
+			<img src={regalosIcon} alt="informacion del evento" width="64" height="64" />
+			Regalos
+		</a>
+	</div>
+</section>
+<section id="nuestra-historia">
 	<img src={floresIcon} alt="Flores" width="96" height="96" />
 	<h2>Nuestra Historia</h2>
 
@@ -191,26 +193,10 @@
 		margin: 2rem;
 	}
 
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 2rem;
-	}
-
-	p {
-		width: 100%;
-	}
-
-	section:nth-child(odd) {
-		background-color: white;
-	}
-
 	#menu {
 		display: flex;
 		flex-direction: row;
-		padding: 1rem;
+		padding: 2rem;
 		justify-content: space-evenly;
 	}
 
@@ -225,6 +211,27 @@
 		text-align: center;
 		font-family: parrafos;
 		font-size: 1rem;
+		max-width: 128px;
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem;
+	}
+
+	section:not(:first-child) > * {
+		max-width: 800px;
+	}
+
+	p {
+		width: 100%;
+	}
+
+	section:not(:first-child):nth-child(odd) {
+		background-color: white;
 	}
 
 	#portada div {
@@ -238,6 +245,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		row-gap: 2rem;
+		column-gap: 2rem;
 		justify-content: center;
 		align-items: center;
 		overflow: hidden;
@@ -280,6 +288,10 @@
 	}
 
 	@media (min-width: 720px) {
+		#photos-grid img {
+			grid-column: span 1;
+		}
+
 		#accounts {
 			display: flex;
 			flex-direction: row;
