@@ -43,7 +43,7 @@
 	</a>
 	<a class="menu-item" href="#info-evento">
 		<img src={infoIcon} alt="informacion del evento" width="64" height="64" />
-		Informacion del Evento
+		Información del Evento
 	</a>
 	<a class="menu-item" href="#regalos">
 		<img src={regalosIcon} alt="informacion del evento" width="64" height="64" />
@@ -95,7 +95,7 @@
 		<div>
 			<h3>Estacionamiento</h3>
 			<p>
-				Se cuenta con cochera con espacio dispnible para autos.<br />
+				Se cuenta con cochera con espacio disponible para autos.<br />
 				Contáctanos con tiempo para separarte un espacio.
 			</p>
 		</div>
@@ -111,13 +111,15 @@
 	</div>
 </section>
 <section id="regalos">
-	<img src={regalosIcon} alt="informacion del evento" width="64" height="64" />
+	<img src={floresIcon} alt="Flores" width="96" height="96" />
+	<!-- <img src={regalosIcon} alt="informacion del evento" width="64" height="64" /> -->
 	<h2>Regalos</h2>
+
 	<p>
 		Si deseas bendecirnos con un regalito, puedes dejarlo en cualquiera de las siguientes
 		direcciones:
 	</p>
-	<ul>
+	<ul class="address">
 		<li>Calle Arnaldo Márquez 853 - Jesús María.</li>
 		<li>Calle Bilbao 157 - Ate.</li>
 	</ul>
@@ -162,8 +164,9 @@
 	}
 
 	#portada h3 {
-		font-family: Roboto;
+		font-family: parrafos;
 		letter-spacing: 3px;
+		font-size: 1.5rem;
 	}
 
 	#title {
@@ -220,6 +223,8 @@
 		padding: 1rem;
 		justify-content: flex-start;
 		text-align: center;
+		font-family: parrafos;
+		font-size: 1rem;
 	}
 
 	#portada div {
@@ -284,5 +289,12 @@
 		#accounts :global(.item):not(:first-child) {
 			border-left: 1px solid;
 		}
+	}
+
+	h3 {
+		font-family: Titulos;
+	}
+	h2 {
+		font-family: Titulos;
 	}
 </style>
