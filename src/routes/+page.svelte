@@ -7,6 +7,10 @@
 	import nosotrosIcon from '$lib/images/nosotros.svg';
 	import regalosIcon from '$lib/images/regalos.svg';
 	import floresIcon from '$lib/images/flowers.svg';
+	import cuentaIcon from '$lib/images/cuenta.svg';
+	import domicilioIcon from '$lib/images/domicilio.svg';
+	import estacionamientoIcon from '$lib/images/estacionamiento.svg';
+	import recepcionIcon from '$lib/images/recepcion.svg';
 	import portada from '$lib/images/fotos/centro-escaleras.jpeg';
 	import photo1 from '$lib/images/fotos/barranco-oscuras.jpeg';
 	import photo2 from '$lib/images/fotos/barranco-pista.jpeg';
@@ -85,6 +89,7 @@
 
 	<div id="info-grid">
 		<div>
+			<img src={recepcionIcon} alt="Recepcion" width="60" height="60" />
 			<h3>La Recepción</h3>
 			<p>
 				18 de Marzo del 2023<br />
@@ -95,6 +100,7 @@
 			</p>
 		</div>
 		<div>
+			<img src={estacionamientoIcon} alt="Estacionamiento" width="60" height="60" />
 			<h3>Estacionamiento</h3>
 			<p>
 				Se cuenta con cochera con espacio disponible para autos.<br />
