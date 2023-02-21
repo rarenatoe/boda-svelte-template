@@ -15,7 +15,7 @@
 
 <footer>
 	<FooterCell>
-		<h2>¿tienes preguntas?</h2>
+		<h3>¿tienes preguntas?</h3>
 		<a class="button" href="mailto:rivadeneyradenisse@gmail.com,rare.na.toe@gmail.com">
 			Envianos un email <img id="cat" height="20" src={catEmail} alt="cat email" />
 		</a>
