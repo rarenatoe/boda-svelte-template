@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Counter from './Counter.svelte';
 	import CodeForCopying from './CodeForCopying.svelte';
 
@@ -36,7 +36,7 @@
 		<h1 id="title">Denisse & Renato</h1>
 		<h3>18 de Marzo del 2023</h3>
 		<Counter />
-		<button id="donde">Donde</button>
+		<a id="donde" href="#mapa">Donde</a>
 	</div>
 	<img src={CloudySVG} alt="nubes" width="100%" color="#FEE6EA" />
 </section>
@@ -107,15 +107,20 @@
 				Contáctanos con tiempo para separarte un espacio.
 			</p>
 		</div>
-		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.708117068435!2d-76.96358568544079!3d-12.06359269145608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c76cb0a8c939%3A0x5bd665718c53dc46!2sCasa%20Salcedo%20Eventos!5e0!3m2!1sen!2spe!4v1676340544239!5m2!1sen!2spe"
-			style="border:0;"
-			width="100%"
-			height="100%"
-			loading="lazy"
-			referrerpolicy="no-referrer-when-downgrade"
-			title="locacion"
-		/>
+		<div id="mapa">
+			<h3>Mapa</h3>
+			<div>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.708117068435!2d-76.96358568544079!3d-12.06359269145608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c76cb0a8c939%3A0x5bd665718c53dc46!2sCasa%20Salcedo%20Eventos!5e0!3m2!1sen!2spe!4v1676340544239!5m2!1sen!2spe"
+					style="border:0;"
+					width="100%"
+					height="100%"
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+					title="locacion"
+				/>
+			</div>
+		</div>
 	</div>
 </section>
 <section id="regalos">
@@ -167,8 +172,7 @@
 	#portada h1,
 	#portada h3 {
 		color: rgb(243, 243, 243);
-		font-weight: 400;
-		text-shadow: 4px 4px 4px #b2a9aa;
+		text-shadow: 8px 8px 8px #b2a9aa;
 	}
 
 	#portada h3 {
@@ -182,12 +186,10 @@
 		align-items: center;
 		justify-content: center;
 		font-family: AdlerySwash;
-		height: 132px;
 		margin: 0;
 	}
 
 	#donde {
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 		background-color: rgb(255 255 255 / 10%);
 		border-width: 1px;
 		color: rgb(243, 243, 243);
@@ -197,6 +199,12 @@
 		text-transform: uppercase;
 		text-shadow: 4px 4px 4px #b2a9aa;
 		margin: 2rem;
+		border-style: outset;
+		text-decoration: none;
+	}
+
+	#donde:active {
+		border: gray 1px solid;
 	}
 
 	#menu {
@@ -232,10 +240,6 @@
 		max-width: 800px;
 	}
 
-	p {
-		width: 100%;
-	}
-
 	section:not(:first-child):nth-child(odd) {
 		background-color: white;
 	}
@@ -268,14 +272,11 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr;
-		row-gap: 2rem;
 		column-gap: 2rem;
 	}
 
-	#info-grid > * {
+	#info-grid div {
 		grid-column: span 2;
-		justify-content: center;
-		align-items: center;
 		text-align: center;
 	}
 
@@ -296,15 +297,21 @@
 	}
 
 	@media (min-width: 720px) {
-		#photos-grid img {
+		#portada h1 {
+			font-size: 6rem;
+		}
+		#photos-grid > img {
 			grid-column: span 1;
 		}
 
-		#info-grid div {
+		#info-grid > div {
 			grid-column: span 1;
 		}
 
-		iframe {
+		#info-grid #mapa {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto 1fr;
 			grid-column: span 2;
 			grid-row: span 2;
 		}
@@ -320,10 +327,8 @@
 		}
 	}
 
+	h2,
 	h3 {
-		font-family: Titulos;
-	}
-	h2 {
 		font-family: Titulos;
 	}
 </style>
