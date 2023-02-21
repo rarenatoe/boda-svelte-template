@@ -135,7 +135,7 @@
 		</div>
 		<div>
 			<h3>Novios Falabella</h3>
-			Codigo: <CodeForCopying code="683167-02" />
+			Codigo: <CodeForCopying code="683167-02" /><br />
 			<a href="https://www.noviosfalabella.com.pe/">noviosfalabella.com</a>
 		</div>
 	</div>
@@ -164,7 +164,6 @@
 	#portada h3 {
 		font-family: Roboto;
 		letter-spacing: 3px;
-		text-align: center;
 	}
 
 	#title {
@@ -285,9 +284,5 @@
 		#accounts :global(.item):not(:first-child) {
 			border-left: 1px solid;
 		}
-	}
-
-	h3 {
-		text-align: center;
 	}
 </style>
