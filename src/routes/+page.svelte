@@ -101,15 +101,15 @@
 				Contáctanos con tiempo para separarte un espacio.
 			</p>
 		</div>
-		<div>
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.708117068435!2d-76.96358568544079!3d-12.06359269145608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c76cb0a8c939%3A0x5bd665718c53dc46!2sCasa%20Salcedo%20Eventos!5e0!3m2!1sen!2spe!4v1676340544239!5m2!1sen!2spe"
-				style="border:0;"
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
-				title="locacion"
-			/>
-		</div>
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.708117068435!2d-76.96358568544079!3d-12.06359269145608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c76cb0a8c939%3A0x5bd665718c53dc46!2sCasa%20Salcedo%20Eventos!5e0!3m2!1sen!2spe!4v1676340544239!5m2!1sen!2spe"
+			style="border:0;"
+			width="100%"
+			height="100%"
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+			title="locacion"
+		/>
 	</div>
 </section>
 <section id="regalos">
@@ -261,14 +261,16 @@
 	#info-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		row-gap: 2rem;
+		column-gap: 2rem;
 	}
 
-	#info-grid div {
+	#info-grid > * {
 		grid-column: span 2;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		padding-top: 2rem;
 	}
 
 	#regalos {
@@ -290,6 +292,15 @@
 	@media (min-width: 720px) {
 		#photos-grid img {
 			grid-column: span 1;
+		}
+
+		#info-grid div {
+			grid-column: span 1;
+		}
+
+		iframe {
+			grid-column: span 2;
+			grid-row: span 2;
 		}
 
 		#accounts {
