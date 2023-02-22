@@ -1,6 +1,5 @@
 <script>
 	import './styles.css';
-	import Footer from './Footer.svelte';
 	import { SvelteToast } from '@zerodevx/svelte-toast';
 
 	// // Optionally set default options here
@@ -24,7 +23,6 @@
 			}
 		}}
 	/>
-	<Footer />
 </div>
 
 <style>
