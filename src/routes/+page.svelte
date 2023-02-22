@@ -10,6 +10,7 @@
 	import cuentaIcon from '$lib/images/cuenta.svg';
 	import domicilioIcon from '$lib/images/domicilio.svg';
 	import estacionamientoIcon from '$lib/images/estacionamiento.svg';
+	import mapaIcon from '$lib/images/map.svg';
 	import recepcionIcon from '$lib/images/recepcion.svg';
 	import portada from '$lib/images/fotos/centro-escaleras.jpeg';
 	import photo1 from '$lib/images/fotos/barranco-oscuras.jpeg';
@@ -117,11 +118,13 @@
 			<img src={estacionamientoIcon} alt="Estacionamiento" width="60" height="60" />
 			<h3>Estacionamiento</h3>
 			<p>
-				Se cuenta con cochera con espacio disponible para autos.<br />
-				Contáctanos con tiempo para separarte un espacio.
+				Se cuenta con cochera con <br /> espacio disponible para autos.<br />
+				Contáctanos con tiempo<br />
+				para separarte un espacio.
 			</p>
 		</div>
 		<div id="mapa">
+			<img src={mapaIcon} alt="Mapa" width="60" height="60" />
 			<h3>Mapa</h3>
 			<div>
 				<iframe

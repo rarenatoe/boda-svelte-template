@@ -89,7 +89,8 @@ h2 {
 }
 
 h3{
-	font-size: 2rem
+	font-size: 2rem;
+	margin-top: 0;
 }
 
 h1, h2, h3 {
@@ -139,7 +140,7 @@ button:focus:not(:focus-visible) {
 }
 
 .button {
-	background-color: var(--color-theme-1);
+		
 	color: var(--color-text);
 	padding: 8px;
 	display: flex;
