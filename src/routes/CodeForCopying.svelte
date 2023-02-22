@@ -6,10 +6,14 @@
 	import './styles.css';
 
 	export let code: string;
+	export let skipCleanUp: boolean = false;
 
 	const onClick = () => {
-		const curatedCode = code.replace(/[^a-zA-Z0-9 ]/g, '');
-		copy(curatedCode);
+		if (skipCleanUp) copy(code);
+		else {
+			const curatedCode = code.replace(/[^a-zA-Z0-9 ]/g, '');
+			copy(curatedCode);
+		}
 		toast.push('Código copiado al portapapeles');
 	};
 </script>

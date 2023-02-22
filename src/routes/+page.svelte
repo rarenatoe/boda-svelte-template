@@ -149,7 +149,7 @@
 	<!-- <img src={regalosIcon} alt="informacion del evento" width="64" height="64" /> -->
 	<h2>Regalos</h2>
 	<div class="trio-grid">
-		<div>
+		<div id="domicilio">
 			<h3>A domicilio</h3>
 			<p>
 				Si deseas bendecirnos con un regalito, puedes dejarlo en cualquiera de las siguientes
@@ -163,7 +163,7 @@
 		</div>
 		<div>
 			<h3>Novios Falabella</h3>
-			Codigo: <CodeForCopying code="683167-02" /><br />
+			Codigo: <CodeForCopying code="683167-02" skipCleanUp /><br />
 			<a href="https://www.noviosfalabella.com.pe/">noviosfalabella.com</a>
 		</div>
 		<div id="accounts">
@@ -317,6 +317,10 @@
 	.trio-grid div {
 		grid-column: span 2;
 		text-align: center;
+	}
+
+	#domicilio {
+		text-align: left;
 	}
 
 	#accounts {
