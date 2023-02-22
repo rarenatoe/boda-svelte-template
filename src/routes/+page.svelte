@@ -9,6 +9,8 @@
 	import floresIcon from '$lib/images/flowers.svg';
 	import cuentaIcon from '$lib/images/cuenta.svg';
 	import domicilioIcon from '$lib/images/domicilio.svg';
+	import yapeIcon from '$lib/images/yape.png';
+	import plinIcon from '$lib/images/plin.png';
 	import estacionamientoIcon from '$lib/images/estacionamiento.svg';
 	import mapaIcon from '$lib/images/map.svg';
 	import recepcionIcon from '$lib/images/recepcion.svg';
@@ -102,7 +104,7 @@
 	<img src={floresIcon} alt="Flores" width="96" height="96" />
 	<h2>Información del Evento</h2>
 
-	<div id="info-grid">
+	<div class="trio-grid" id="info-grid">
 		<div>
 			<img src={recepcionIcon} alt="Recepcion" width="60" height="60" />
 			<h3>La Recepción</h3>
@@ -124,8 +126,10 @@
 			</p>
 		</div>
 		<div id="mapa">
-			<img src={mapaIcon} alt="Mapa" width="60" height="60" />
-			<h3>Mapa</h3>
+			<div>
+				<img src={mapaIcon} alt="Mapa" width="60" height="60" />
+				<h3>Mapa</h3>
+			</div>
 			<div>
 				<iframe
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.708117068435!2d-76.96358568544079!3d-12.06359269145608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c76cb0a8c939%3A0x5bd665718c53dc46!2sCasa%20Salcedo%20Eventos!5e0!3m2!1sen!2spe!4v1676340544239!5m2!1sen!2spe"
@@ -144,31 +148,56 @@
 	<img src={floresIcon} alt="Flores" width="96" height="96" />
 	<!-- <img src={regalosIcon} alt="informacion del evento" width="64" height="64" /> -->
 	<h2>Regalos</h2>
-
-	<p>
-		Si deseas bendecirnos con un regalito, puedes dejarlo en cualquiera de las siguientes
-		direcciones:
-	</p>
-	<ul class="address">
-		<li>Calle Arnaldo Márquez 853 - Jesús María.</li>
-		<li>Calle Bilbao 157 - Ate.</li>
-	</ul>
-	<p>O virtualmente:</p>
-	<div id="accounts">
+	<div class="trio-grid">
 		<div>
-			<h3>BCP</h3>
-			Cta. Soles: <CodeForCopying code="193-75133224-0-44" /><br />
-			Yape: <CodeForCopying code="936-864-395" />
-		</div>
-		<div>
-			<h3>Scotiabank</h3>
-			Cta. Soles: <CodeForCopying code="150-0278740" /><br />
-			Plin: <CodeForCopying code="991-784-082" />
+			<h3>A domicilio</h3>
+			<p>
+				Si deseas bendecirnos con un regalito, puedes dejarlo en cualquiera de las siguientes
+				direcciones:
+			</p>
+			<ul>
+				<li>Calle Arnaldo Márquez 853 - Jesús María.</li>
+				<li>Calle Bilbao 157 - Ate.</li>
+			</ul>
+			<p>O virtualmente:</p>
 		</div>
 		<div>
 			<h3>Novios Falabella</h3>
 			Codigo: <CodeForCopying code="683167-02" /><br />
 			<a href="https://www.noviosfalabella.com.pe/">noviosfalabella.com</a>
+		</div>
+		<div id="accounts">
+			<h3>Cuentas Bancarias</h3>
+			<table>
+				<tbody>
+					<tr>
+						<td>Titular:</td>
+						<td><CodeForCopying code="Renato Alegre" /></td>
+					</tr>
+					<tr>
+						<td>BCP Soles:</td>
+						<td><CodeForCopying code="193-75133224-0-44" /></td>
+					</tr>
+					<tr>
+						<td><img src={yapeIcon} alt="BCP" /></td>
+						<td><CodeForCopying code="936-864-395" /></td>
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<tr>
+					<td>Titular:</td>
+					<td><CodeForCopying code="Denisse Rivadeneyra" /></td>
+				</tr>
+				<tr>
+					<td>Scotiabank Soles:</td>
+					<td><CodeForCopying code="150-0278740" /></td>
+				</tr>
+				<tr>
+					<td><img src={plinIcon} alt="BCP" /></td>
+					<td><CodeForCopying code="991-784-082" /></td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </section>
@@ -240,17 +269,8 @@
 		padding: 1rem;
 		justify-content: flex-start;
 		text-align: center;
-		font-family: parrafos;
 		font-size: 1rem;
 		max-width: 128px;
-	}
-
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 2rem;
 	}
 
 	section:not(:first-child) > * {
@@ -285,32 +305,40 @@
 		grid-column: span 2;
 	}
 
-	#info-grid {
+	.trio-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-rows: auto auto auto;
 		column-gap: 2rem;
 	}
 
-	#info-grid div {
+	.trio-grid div {
 		grid-column: span 2;
 		text-align: center;
 	}
 
-	#regalos {
-		font-family: LibreBaskerville-Regular;
-		text-shadow: 4px 4px 4px #ae889088;
-	}
-
 	#accounts {
-		grid-template-columns: 1fr 1fr 1fr;
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+	#accounts > table {
+		grid-column: span 1;
+		padding: 1rem 0;
 	}
 
-	#accounts div {
-		grid-column: span 3;
-		border-bottom: 1px solid black;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+	#accounts > table:last-child {
+		border-top: 1px solid;
+	}
+
+	#accounts img {
+		height: 2rem;
+		margin-right: 0.5rem;
+		vertical-align: middle;
+	}
+
+	td {
+		text-align: left;
+		vertical-align: middle;
 	}
 
 	@media (min-width: 720px) {
@@ -321,31 +349,45 @@
 			grid-column: span 1;
 		}
 
-		#info-grid > div {
+		.trio-grid {
+			grid-template-rows: auto auto;
+		}
+
+		.trio-grid > div {
 			grid-column: span 1;
+		}
+
+		.trio-grid > div:last-child {
+			grid-column: span 2;
+		}
+
+		#info-grid {
+			grid-template-rows: 1fr 1fr 1fr;
 		}
 
 		#info-grid #mapa {
 			display: grid;
 			grid-template-columns: 1fr;
 			grid-template-rows: auto 1fr;
-			grid-column: span 2;
 			grid-row: span 2;
 		}
 
 		#accounts {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto 1fr;
 		}
 
-		#accounts :global(.item):not(:first-child) {
+		#accounts > *:first-child {
+			grid-column: span 2;
+		}
+
+		#accounts table {
+			padding: 0 1rem;
+		}
+
+		#accounts > table:last-child {
+			border-top: none;
 			border-left: 1px solid;
 		}
-	}
-
-	h2,
-	h3 {
-		font-family: Titulos;
 	}
 </style>

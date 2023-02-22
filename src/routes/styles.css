@@ -1,7 +1,7 @@
 @import '@fontsource/fira-mono';
 
 :root {
-	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+	--font-body: parrafos, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 	--color-bg-0: rgb(202, 216, 228);
@@ -24,32 +24,27 @@
 }
 
 @font-face {
-    font-family: 'AdlerySwash';
-    font-style: normal;
-    font-weight: 500;
-    src: url('/fonts/Adlery-Swash-trial.ttf'); /* IE9 Compat Modes */
-}
-
-
-@font-face {
-    font-family: 'LibreBaskerville-Regular';
-    font-style: normal;
-    font-weight: 500;
-    src: url('/fonts/LibreBaskerville-Regular.ttf'); /* IE9 Compat Modes */
+	font-family: 'AdlerySwash';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/fonts/Adlery-Swash-trial.ttf');
+	/* IE9 Compat Modes */
 }
 
 @font-face {
-    font-family: 'Titulos';
-    font-style: normal;
-    font-weight: 500;
-    src: url('/fonts/Titulos.ttf'); /* IE9 Compat Modes */
+	font-family: 'Titulos';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/fonts/Titulos.ttf');
+	/* IE9 Compat Modes */
 }
 
 @font-face {
-    font-family: 'parrafos';
-    font-style: normal;
-    font-weight: 500;
-    src: url('/fonts/parrafos.ttf'); /* IE9 Compat Modes */
+	font-family: 'parrafos';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/fonts/parrafos.ttf');
+	/* IE9 Compat Modes */
 }
 
 body {
@@ -61,9 +56,9 @@ body {
 
 h1,
 h2,
-p, .address{
+p,
+ul {
 	font-weight: 400;
-	font-family: parrafos	;
 }
 
 p {
@@ -88,13 +83,16 @@ h2 {
 	margin: 0;
 }
 
-h3{
+h3 {
 	font-size: 2rem;
 	margin-top: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	text-align: center;
+	font-family: Titulos;
 }
 
 pre {
@@ -108,15 +106,6 @@ pre {
 	color: var(--color-text);
 }
 
-.text-column {
-	display: flex;
-	max-width: 48rem;
-	flex: 0.6;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-}
-
 input,
 button {
 	font-size: inherit;
@@ -127,20 +116,8 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
-.visually-hidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: auto;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;
-}
-
 .button {
-		
+
 	color: var(--color-text);
 	padding: 8px;
 	display: flex;
@@ -161,6 +138,10 @@ button:focus:not(:focus-visible) {
 	text-decoration: none;
 }
 
-.toast {
-	border-radius: 8px;
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
 }
