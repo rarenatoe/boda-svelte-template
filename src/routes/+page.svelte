@@ -225,6 +225,7 @@
 		font-family: parrafos;
 		letter-spacing: 3px;
 		font-size: 1.5rem;
+		margin-top: 1em;
 	}
 
 	#title {
@@ -310,6 +311,7 @@
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto auto;
 		column-gap: 2rem;
+		row-gap: 2rem;
 	}
 
 	.trio-grid div {
