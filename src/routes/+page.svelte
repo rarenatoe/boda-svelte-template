@@ -20,6 +20,20 @@
 	import photo6 from '$lib/images/fotos/centro-pista-2.jpeg';
 	import photo7 from '$lib/images/fotos/puente-suspiros.jpeg';
 	import photo8 from '$lib/images/fotos/barranco-arbol.jpeg';
+
+	function smoothScroll(event: Event) {
+		const id = (event.target as HTMLAnchorElement).getAttribute('href');
+		const target = id ? document.querySelector<HTMLElement>(id) : null;
+		// const id = event.target?.getAttribute('href');
+		// const target = document.querySelector(id);
+
+		if (target) {
+			event.preventDefault();
+			target.scrollIntoView({
+				behavior: 'smooth'
+			});
+		}
+	}
 </script>
 
 <svelte:head>
@@ -36,21 +50,21 @@
 		<h1 id="title">Denisse & Renato</h1>
 		<h3>18 de Marzo del 2023</h3>
 		<Counter />
-		<a id="donde" href="#mapa">Donde</a>
+		<a id="donde" href="#mapa" on:click|preventDefault={smoothScroll}>Donde</a>
 	</div>
 	<img src={CloudySVG} alt="nubes" width="100%" color="#FEE6EA" />
 </section>
 <section>
 	<div id="menu">
-		<a class="menu-item" href="#nuestra-historia">
+		<a class="menu-item" href="#nuestra-historia" on:click|preventDefault={smoothScroll}>
 			<img src={nosotrosIcon} alt="informacion del evento" width="64" height="64" />
 			Nuestra Historia
 		</a>
-		<a class="menu-item" href="#info-evento">
+		<a class="menu-item" href="#info-evento" on:click|preventDefault={smoothScroll}>
 			<img src={infoIcon} alt="informacion del evento" width="64" height="64" />
 			Informacion del Evento
 		</a>
-		<a class="menu-item" href="#regalos">
+		<a class="menu-item" href="#regalos" on:click|preventDefault={smoothScroll}>
 			<img src={regalosIcon} alt="informacion del evento" width="64" height="64" />
 			Regalos
 		</a>
