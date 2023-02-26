@@ -58,23 +58,23 @@
 	<img src={CloudySVG} alt="nubes" width="100%" color="#FEE6EA" />
 </section>
 <section>
-	<div id="menu">
-		<a class="menu-item" href="#nuestra-historia" on:click|preventDefault={smoothScroll}>
-			<img src={nosotrosIcon} alt="informacion del evento" width="64" height="64" />
+	<nav>
+		<a href="#nuestra-historia" on:click|preventDefault={smoothScroll}>
+			<img src={nosotrosIcon} alt="informacion del evento" />
 			Nuestra Historia
 		</a>
-		<a class="menu-item" href="#info-evento" on:click|preventDefault={smoothScroll}>
-			<img src={infoIcon} alt="informacion del evento" width="64" height="64" />
+		<a href="#info-evento" on:click|preventDefault={smoothScroll}>
+			<img src={infoIcon} alt="informacion del evento" />
 			Informacion del Evento
 		</a>
-		<a class="menu-item" href="#regalos" on:click|preventDefault={smoothScroll}>
-			<img src={regalosIcon} alt="informacion del evento" width="64" height="64" />
+		<a href="#regalos" on:click|preventDefault={smoothScroll}>
+			<img src={regalosIcon} alt="informacion del evento" />
 			Regalos
 		</a>
-	</div>
+	</nav>
 </section>
 <section id="nuestra-historia">
-	<img src={floresIcon} alt="Flores" width="96" height="96" />
+	<img src={floresIcon} alt="Flores" />
 	<h2>Nuestra Historia</h2>
 
 	<p>
@@ -101,7 +101,7 @@
 	</div>
 </section>
 <section id="info-evento">
-	<img src={floresIcon} alt="Flores" width="96" height="96" />
+	<img src={floresIcon} alt="Flores" />
 	<h2>Información del Evento</h2>
 
 	<div class="trio-grid" id="info-grid">
@@ -145,8 +145,7 @@
 	</div>
 </section>
 <section id="regalos">
-	<img src={floresIcon} alt="Flores" width="96" height="96" />
-	<!-- <img src={regalosIcon} alt="informacion del evento" width="64" height="64" /> -->
+	<img src={floresIcon} alt="Flores" />
 	<h2>Regalos</h2>
 	<div class="trio-grid">
 		<div id="domicilio">
@@ -254,14 +253,18 @@
 		border: gray 1px solid;
 	}
 
-	#menu {
+	nav {
 		display: flex;
 		flex-direction: row;
 		padding: 2rem;
-		justify-content: space-evenly;
+		justify-content: space-between;
 	}
 
-	.menu-item {
+	nav img {
+		width: 4rem;
+	}
+
+	nav a {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -277,9 +280,11 @@
 	section:not(:first-child) > * {
 		max-width: 800px;
 	}
-
 	section:not(:first-child):nth-child(odd) {
 		background-color: white;
+	}
+	section > img:first-child {
+		width: 5rem;
 	}
 
 	#portada div {
@@ -351,6 +356,22 @@
 		#portada h1 {
 			font-size: 6rem;
 		}
+
+		nav {
+			width: 70%;
+		}
+		nav img {
+			width: 5rem;
+		}
+
+		nav a {
+			font-size: 1.25rem;
+		}
+
+		section > img:first-child {
+			width: 6rem;
+		}
+
 		#photos-grid > img {
 			grid-column: span 1;
 		}

@@ -54,7 +54,7 @@
 		grid-template-rows: auto auto;
 		text-align: center;
 		color: rgb(243, 243, 243);
-		text-shadow: 8px 8px 8px #b2a9aa;
+		text-shadow: 3px 3px 4px black;
 		margin: 2rem;
 	}
 
