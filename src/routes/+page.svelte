@@ -15,14 +15,14 @@
 	import mapaIcon from '$lib/images/map.svg';
 	import recepcionIcon from '$lib/images/recepcion.svg';
 	import portada from '$lib/images/fotos/centro-escaleras.jpeg';
-	import photo1 from '$lib/images/fotos/barranco-oscuras.jpeg';
-	import photo2 from '$lib/images/fotos/barranco-pista.jpeg';
-	import photo3 from '$lib/images/fotos/centro-alameda-1.jpeg';
-	import photo4 from '$lib/images/fotos/centro-alameda-2.jpeg';
-	import photo5 from '$lib/images/fotos/centro-pista-1.jpeg';
-	import photo6 from '$lib/images/fotos/centro-pista-2.jpeg';
-	import photo7 from '$lib/images/fotos/puente-suspiros.jpeg';
-	import photo8 from '$lib/images/fotos/barranco-arbol.jpeg';
+	import photo1 from '$lib/images/fotos/barranco-oscuras.jpg';
+	import photo2 from '$lib/images/fotos/barranco-pista.jpg';
+	import photo3 from '$lib/images/fotos/centro-alameda-1.jpg';
+	import photo4 from '$lib/images/fotos/centro-alameda-2.jpg';
+	import photo5 from '$lib/images/fotos/centro-pista-1.jpg';
+	import photo6 from '$lib/images/fotos/centro-pista-2.jpg';
+	import photo7 from '$lib/images/fotos/puente-suspiros.jpg';
+	import photo8 from '$lib/images/fotos/barranco-arbol.jpg';
 
 	function smoothScroll(event: Event) {
 		const id = (event.target as HTMLAnchorElement).getAttribute('href');
