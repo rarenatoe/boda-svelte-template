@@ -14,7 +14,7 @@
 	import estacionamientoIcon from '$lib/images/estacionamiento.svg';
 	import mapaIcon from '$lib/images/map.svg';
 	import recepcionIcon from '$lib/images/recepcion.svg';
-	import portada from '$lib/images/fotos/centro-escaleras.jpeg';
+	import portada from '$lib/images/fotos/centro-escaleras.jpg';
 	import photo1 from '$lib/images/fotos/barranco-oscuras.jpg';
 	import photo2 from '$lib/images/fotos/barranco-pista.jpg';
 	import photo3 from '$lib/images/fotos/centro-alameda-1.jpg';
