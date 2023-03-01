@@ -25,10 +25,18 @@
 	import photo8 from '$lib/images/fotos/barranco-arbol.jpg';
 
 	function smoothScroll(event: Event) {
-		const id = (event.target as HTMLAnchorElement).getAttribute('href');
-		const target = id ? document.querySelector<HTMLElement>(id) : null;
-		// const id = event.target?.getAttribute('href');
-		// const target = document.querySelector(id);
+		let target: HTMLElement | null = null;
+
+		if ((event.target as HTMLElement).tagName === 'IMG') {
+			const a = (event.target as HTMLElement).closest('a');
+			if (a) {
+				target = document.querySelector<HTMLElement>(a.getAttribute('href')!);
+			}
+		} else {
+			target = document.querySelector<HTMLElement>(
+				(event.target as HTMLAnchorElement).getAttribute('href')!
+			);
+		}
 
 		if (target) {
 			event.preventDefault();
@@ -60,15 +68,15 @@
 <section>
 	<nav>
 		<a href="#nuestra-historia" on:click|preventDefault={smoothScroll}>
-			<img src={nosotrosIcon} alt="informacion del evento" />
+			<img src={nosotrosIcon} alt="Nuestra historia" />
 			Nuestra Historia
 		</a>
 		<a href="#info-evento" on:click|preventDefault={smoothScroll}>
-			<img src={infoIcon} alt="informacion del evento" />
+			<img src={infoIcon} alt="información del evento" />
 			Informacion del Evento
 		</a>
 		<a href="#regalos" on:click|preventDefault={smoothScroll}>
-			<img src={regalosIcon} alt="informacion del evento" />
+			<img src={regalosIcon} alt="Regalitos" />
 			Regalos
 		</a>
 	</nav>
