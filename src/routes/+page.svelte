@@ -168,7 +168,9 @@
 			</ul>
 			<p>O virtualmente:</p>
 		</div>
-		<div>
+		<div
+			title="Algunas personas estan experimentando dificultades haciendo compras en Falabella. Si es este tu caso, recomendamos hacer la compra por separado. Lamentamos las molestias y agradecemos tu intención 🙏"
+		>
 			<h3>Novios Falabella</h3>
 			Codigo: <CodeForCopying code="683167-02" skipCleanUp /><br />
 			<a href="https://www.noviosfalabella.com.pe/">noviosfalabella.com</a>
@@ -358,6 +360,23 @@
 	td {
 		text-align: left;
 		vertical-align: middle;
+	}
+
+	div[title] {
+		position: relative;
+	}
+
+	div[title]:hover::after {
+		content: attr(title);
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 0.5em;
+		background-color: #333;
+		color: #fff;
+		border-radius: 0.5em;
+		font-size: 0.8em;
 	}
 
 	@media (min-width: 720px) {

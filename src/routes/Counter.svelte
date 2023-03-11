@@ -14,10 +14,19 @@
 	const HOUR = MINUTE * 60;
 	const DAY = HOUR * 24;
 
-	$: days = doubleDigit(millisecondsLeft / DAY);
-	$: hours = doubleDigit((millisecondsLeft % DAY) / HOUR);
-	$: minutes = doubleDigit((millisecondsLeft % HOUR) / MINUTE);
-	$: seconds = doubleDigit((millisecondsLeft % MINUTE) / SECOND);
+	const numDays = millisecondsLeft / DAY;
+	const numHours = (millisecondsLeft % DAY) / HOUR;
+
+	let stage = 0;
+	if (numDays > -1 && numDays < 0 && numHours > -7) stage = 1;
+	else if (numDays < 0) {
+		stage = 2;
+	}
+
+	$: days = doubleDigit(Math.max(numDays, 0));
+	$: hours = doubleDigit(Math.max(numHours, 0));
+	$: minutes = doubleDigit((Math.max(millisecondsLeft % HOUR) / MINUTE, 0));
+	$: seconds = doubleDigit(Math.max((millisecondsLeft % MINUTE) / SECOND, 0));
 
 	onMount(() => {
 		const interval = setInterval(() => {
@@ -30,21 +39,25 @@
 	});
 </script>
 
-<div class="counter">
-	<div class="header">DÍAS</div>
-	<div />
-	<div class="header">HORAS</div>
-	<div />
-	<div class="header">MINUTOS</div>
-	<div />
-	<div class="header">SEGUNDOS</div>
-	<div class="number">{days}</div>
-	<div class="number">:</div>
-	<div class="number">{hours}</div>
-	<div class="number">:</div>
-	<div class="number">{minutes}</div>
-	<div class="number">:</div>
-	<div class="number">{seconds}</div>
+<div class={`counter ${stage === 1 ? 'flash' : ''}`}>
+	{#if stage < 2}
+		<div class="header">DÍAS</div>
+		<div />
+		<div class="header">HORAS</div>
+		<div />
+		<div class="header">MINUTOS</div>
+		<div />
+		<div class="header">SEGUNDOS</div>
+		<div class="number">{days}</div>
+		<div class="number">:</div>
+		<div class="number">{hours}</div>
+		<div class="number">:</div>
+		<div class="number">{minutes}</div>
+		<div class="number">:</div>
+		<div class="number">{seconds}</div>
+	{:else}
+		<div class="number" style="grid-column: span 7;">¡Gracias por asistir!</div>
+	{/if}
 </div>
 
 <style>
@@ -70,5 +83,24 @@
 
 	.number {
 		font-size: 3rem;
+	}
+
+	.flash {
+		animation-name: flash-animation;
+		animation-duration: 1.5s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes flash-animation {
+		0% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
 </style>
